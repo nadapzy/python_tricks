@@ -14,8 +14,8 @@ import urllib
 from bs4 import BeautifulSoup
 import urllib2
 
-os.environ['https_proxy'] = 'gec-proxy-svr.homeoffice.wal-mart.com:8080'
-os.environ['http_proxy'] = 'gec-proxy-svr.homeoffice.wal-mart.com:8080'
+os.environ['https_proxy'] = 'proxy1'
+os.environ['http_proxy'] = 'proxy1'
 outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
 
 inbox = outlook.GetDefaultFolder(6) # "6" refers to the index of a folder - in this case,
@@ -32,7 +32,7 @@ while message:
 #        print (attachment)
     message = messages.GetNext ()
 
-proxies = {'https':r'http://zpeng:Prepare4best@proxy.wal-mart.com:8080','http':r'http://zpeng:Prepare4best@proxy.wal-mart.com:8080'}
+proxies = {'https':r'http://userid:pwd@proxy:8080','http':r'http://userid:pwd@proxy:8080'}
 
 
 
